@@ -1,5 +1,5 @@
 const axios = require("axios");
-const HightouchEvents = require('@hightouchio/events-sdk-node'); // use version 2.x.x
+const HightouchEvents = require('@hightouchio/events-sdk-node');
 require('dotenv').config({ path: '../../.env' });
 
 const writeKey = process.env.WRITE_KEY;
