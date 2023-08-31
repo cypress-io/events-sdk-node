@@ -3,9 +3,9 @@ name: 'Unit Tests, Coverage'
 on:
   workflow_dispatch:
   push:
-    branches: ['master', 'develop']
+    branches: ['master', 'develop', 'main']
   pull_request:
-    branches: ['master', 'develop']
+    branches: ['master', 'develop', 'main']
     types: ['opened', 'reopened', 'synchronize']
 
 jobs:
