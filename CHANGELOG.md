@@ -1,6 +1,6 @@
 # Changelog
 
-### [1.0.0](https://github.com/hightouchio/events-sdk-node/compare/v0.0.0...v1.0.0) (2023-08-30)
+### [1.0.0](https://github.com/ht-sdks/events-sdk-node/compare/v0.0.0...v1.0.0) (2023-08-31)
 * updated default data plane and control plane URLs
 * updated documentation
 * updated naming

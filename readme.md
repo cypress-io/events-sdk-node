@@ -1,6 +1,6 @@
-# Hightouch Node.js SDK
+# Events Node.js SDK
 
-Hightouch's Node SDK lets you track event data from your Node applications. After integrating the SDK, you will be able to send event data to numerous destinations.
+The Node Events SDK lets you track event data from your Node applications.
 
 ## Installing the SDK
 
@@ -12,7 +12,7 @@ $ npm install @hightouchio/events-sdk-node
 
 ## Using the SDK
 
-Create a global Hightouch client:
+Create a global client:
 
 ```javascript
 const Analytics = require('@hightouchio/events-sdk-node');
@@ -197,7 +197,3 @@ client.flush(function(err, batch){
 - Simultaniously, the SDK will also be retrieving batches from Redis and attempting to send them to the dataplane URL.
 - The processor will retry errors up to `JobOpts.maxAttempts` times, with an exponential backoff.
 - If the job fails `JobOpts.maxAttempts` times, it will not be retried again and pushed to a failed queue.
-
-## About Hightouch
-
-[**Hightouch**](https://hightouch.com/) is a **composable customer data platform**.

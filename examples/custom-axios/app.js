@@ -1,5 +1,5 @@
 const axios = require("axios");
-const HightouchEvents = require('@hightouchio/events-sdk-node');
+const HTEvents = require('@hightouchio/events-sdk-node');
 require('dotenv').config({ path: '../../.env' });
 
 const writeKey = process.env.WRITE_KEY;
@@ -22,7 +22,7 @@ axiosInstanceWithInterceptors.interceptors.response.use(
     return Promise.reject(error);
   });
 
-const client = new HightouchEvents(writeKey, {
+const client = new HTEvents(writeKey, {
   axiosInstance: axiosInstanceWithInterceptors,
   dataPlaneUrl,
   gzip: false,
@@ -30,7 +30,7 @@ const client = new HightouchEvents(writeKey, {
   logLevel: 'debug',
 });
 /**
- * Sample function to send 3 hightouch events[identify,track,track] and make sure events are flowing
+ * Sample function to send 3 events[identify,track,track] and make sure events are flowing
  */
 function test() {
   client.identify(
@@ -85,6 +85,6 @@ try {
   console.log(e.message);
 }
 
-exports.HightouchEvents = HightouchEvents;
+exports.HTEvents = HTEvents;
 
 // run this file with the command "node app"

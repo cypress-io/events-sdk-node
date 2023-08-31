@@ -1,16 +1,16 @@
-const HightoucheEvents = require('@hightouchio/events-sdk-node');
+const HTEvents = require('@hightouchio/events-sdk-node');
 require('dotenv').config({ path: '../../.env' });
 
 const writeKey = process.env.WRITE_KEY;
 const dataPlaneUrl = process.env.DATAPLANE_URL;
 
-const client = new HightoucheEvents(writeKey, {
+const client = new HTEvents(writeKey, {
   dataPlaneUrl,
   flushAt: 2,
   logLevel: 'debug',
 });
 /**
- * Sample function to send 3 hightouch events[identify,track,track] and make sure events are flowing
+ * Sample function to send 3 events[identify,track,track] and make sure events are flowing
  */
 function test() {
   client.identify(
@@ -65,6 +65,6 @@ try {
   console.log(e.message);
 }
 
-exports.HightoucheEvents = HightoucheEvents;
+exports.HTEvents = HTEvents;
 
 // run this file with the command "node app"

@@ -1,12 +1,12 @@
 {
   "name": "@hightouchio/events-sdk-node",
   "version": "1.0.0",
-  "description": "hightouch Events Node SDK",
+  "description": "HT Events Node SDK",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "types": "./index.d.ts",
   "license": "",
-  "repository": "hightouchio/events-sdk-node",
+  "repository": "ht-sdks/events-sdk-node",
   "author": {
     "name": ""
   },
