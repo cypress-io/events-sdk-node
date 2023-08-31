@@ -1,14 +1,16 @@
-const Rudderanalytics = require('@rudderstack/rudder-sdk-node'); // For v1.x.x
+// TODO fix this; it's for the 1.0.0 prefork version (forked at 2.0.0).
+// Did not fork the 1.0.0 version.
+const HightouchEvents = require('@hightouch/events-sdk-node');
 require('dotenv').config({ path: '../../.env' });
 
 const writeKey = process.env.WRITE_KEY;
 const dataPlaneUrl = process.env.DATAPLANE_URL;
 
-const client = new Rudderanalytics(writeKey, `${dataPlaneUrl}/v1/batch`, {
+const client = new HightouchEvents(writeKey, `${dataPlaneUrl}/v1/batch`, {
   // flushAt: 2,
 });
 /**
- * Sample function to send 3 rudder events[identify,track,track] and make sure it's completion by promosifiying the flush
+ * Sample function to send 3 hightouch events[identify,track,track] and make sure it's completion by promosifiying the flush
  */
 async function test() {
   // promisify the flush method
@@ -67,6 +69,6 @@ test().then(() => {
   console.log('test call done');
 });
 
-exports.Rudderanalytics = Rudderanalytics;
+exports.HightouchEvents = HightouchEvents;
 
 // run this file with the command "node app"

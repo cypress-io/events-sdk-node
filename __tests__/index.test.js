@@ -95,7 +95,7 @@ test('expose a constructor', (t) => {
 });
 
 test('require a write key', (t) => {
-  t.throws(() => new Analytics(), "You must pass your RudderStack project's write key.");
+  t.throws(() => new Analytics(), "You must pass your Hightouch project's write key.");
 });
 
 test('create a queue', (t) => {
@@ -108,7 +108,7 @@ test('default options', (t) => {
   const client = new Analytics('key');
 
   t.is(client.writeKey, 'key');
-  t.is(client.host, 'https://hosted.rudderlabs.com');
+  t.is(client.host, 'https://events.us-east-1.hightouch.com');
   t.is(client.flushAt, 20);
   t.is(client.flushInterval, 10000);
 });

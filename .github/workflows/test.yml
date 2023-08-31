@@ -1,4 +1,4 @@
-name: 'Unit Tests, Coverage & Sonar'
+name: 'Unit Tests, Coverage'
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: 'Unit Tests, Coverage & Sonar'
+    name: 'Unit Tests, Coverage'
     runs-on: ubuntu-latest
 
     steps:
@@ -33,8 +33,3 @@ jobs:
           npm run test:ci
           npm run check:lint:ci
 
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

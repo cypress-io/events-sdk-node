@@ -1,12 +1,12 @@
 {
-  "name": "@rudderstack/rudder-sdk-node",
-  "version": "2.0.4",
-  "description": "Rudder Node SDK",
+  "name": "@hightouchio/events-sdk-node",
+  "version": "1.0.0",
+  "description": "hightouch Events Node SDK",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "types": "./index.d.ts",
   "license": "",
-  "repository": "rudderlabs/rudder-sdk-node",
+  "repository": "hightouchio/events-sdk-node",
   "author": {
     "name": ""
   },

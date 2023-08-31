@@ -57,7 +57,7 @@ export interface constructorOptions {
 export type apiCallback = () => void;
 declare class Analytics {
   /**
-   * Initialize a new `Analytics` with your RudderStack project's `writeKey` and an
+   * Initialize a new `Analytics` with your project's `writeKey` and an
    * optional dictionary of `options`.
    *
    * @param {String} writeKey
@@ -67,8 +67,8 @@ declare class Analytics {
    *   @property {Number} [maxQueueSize] (default: 500 kb)
    *   @property {Number} [maxInternalQueueSize] (default: 20000)
    *   @property {String} [logLevel] (default: 'info')
-   *   @property {String} [dataPlaneUrl] (default: 'https://hosted.rudderlabs.com')
-   *   @property {String} [host] (default: 'https://hosted.rudderlabs.com')
+   *   @property {String} [dataPlaneUrl] (default: 'https://events.us-east-1.hightouch.com')
+   *   @property {String} [host] (default: 'https://events.us-east-1.hightouch.com')
    *   @property {String} [path] (default: '/v1/batch')
    *   @property {Boolean} [enable] (default: true)
    *   @property {Object} [axiosConfig] (optional)
@@ -94,8 +94,8 @@ declare class Analytics {
    * @param {Object=} queueOpts.jobOpts
    * @param {Number} queueOpts.jobOpts.maxAttempts
    * {
-   *    queueName: string = rudderEventsQueue,
-   *    prefix: string = rudder
+   *    queueName: string = hightouchEventsQueue,
+   *    prefix: string = hightouch
    *    isMultiProcessor: booloean = false
    *    redisOpts: {
    *      port?: number = 6379;

@@ -1,16 +1,16 @@
-const Rudderanalytics = require('@rudderstack/rudder-sdk-node'); // use version 2.x.x
+const HightoucheEvents = require('@hightouchio/events-sdk-node');
 require('dotenv').config({ path: '../../.env' });
 
 const writeKey = process.env.WRITE_KEY;
 const dataPlaneUrl = process.env.DATAPLANE_URL;
 
-const client = new Rudderanalytics(writeKey, {
+const client = new HightoucheEvents(writeKey, {
   dataPlaneUrl,
   flushAt: 2,
   logLevel: 'debug',
 });
 /**
- * Sample function to send 3 rudder events[identify,track,track] and make sure events are flowing
+ * Sample function to send 3 hightouch events[identify,track,track] and make sure events are flowing
  */
 function test() {
   client.identify(
@@ -65,6 +65,6 @@ try {
   console.log(e.message);
 }
 
-exports.Rudderanalytics = Rudderanalytics;
+exports.HightoucheEvents = HightoucheEvents;
 
 // run this file with the command "node app"

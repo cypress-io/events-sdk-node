@@ -1,4 +1,4 @@
-const LOG_MSG_PREFIX = 'Rudder';
+const LOG_MSG_PREFIX = 'Hightouch';
 const LOG_LEVEL_MAP = {
   log: 0,
   info: 1,

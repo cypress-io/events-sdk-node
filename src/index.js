@@ -25,7 +25,7 @@ const noop = () => {};
 
 class Analytics {
   /**
-   * Initialize a new `Analytics` with your RudderStack source's `writeKey` and an
+   * Initialize a new `Analytics` with your Hightouch source's `writeKey` and an
    * optional dictionary of `options`.
    *
    * @param {String} writeKey
@@ -35,8 +35,8 @@ class Analytics {
    *   @property {Number} [maxQueueSize] (default: 500 kb)
    *   @property {Number} [maxInternalQueueSize] (default: 20000)
    *   @property {String} [logLevel] (default: 'info')
-   *   @property {String} [dataPlaneUrl] (default: 'https://hosted.rudderlabs.com')
-   *   @property {String} [host] (default: 'https://hosted.rudderlabs.com')
+   *   @property {String} [dataPlaneUrl] (default: 'https://events.us-east-1.hightouch.com')
+   *   @property {String} [host] (default: 'https://events.us-east-1.hightouch.com')
    *   @property {String} [path] (default: '/v1/batch')
    *   @property {Boolean} [enable] (default: true)
    *   @property {Object} [axiosConfig] (optional)
@@ -67,7 +67,7 @@ class Analytics {
     } = loadOptions;
     let { axiosInstance } = loadOptions;
 
-    assert(writeKey, "You must pass your RudderStack project's write key.");
+    assert(writeKey, "You must pass your Hightouch project's write key.");
 
     this.queue = [];
     this.pQueue = undefined;
@@ -75,7 +75,7 @@ class Analytics {
     this.pQueueOpts = undefined;
     this.pJobOpts = {};
     this.writeKey = writeKey;
-    this.host = removeSlash(dataPlaneUrl || host || 'https://hosted.rudderlabs.com');
+    this.host = removeSlash(dataPlaneUrl || host || 'https://events.us-east-1.hightouch.com');
     this.path = removeSlash(path || '/v1/batch');
     if (axiosInstance == null) {
       axiosInstance = axios.create(axiosConfig);
@@ -229,8 +229,8 @@ class Analytics {
    * @param {Object=} queueOpts.jobOpts
    * @param {Number} queueOpts.jobOpts.maxAttempts
    * {
-   *    queueName: string = rudderEventsQueue,
-   *    prefix: string = rudder
+   *    queueName: string = hightouchEventsQueue,
+   *    prefix: string = hightouch
    *    isMultiProcessor: booloean = false
    *    redisOpts: {
    *      port?: number = 6379;
@@ -261,9 +261,9 @@ class Analytics {
       throw new Error('redis connection parameters not present. Cannot make a persistent queue');
     }
     this.pJobOpts = this.pQueueOpts.jobOpts || {};
-    this.pQueue = new Queue(this.pQueueOpts.queueName || 'rudderEventsQueue', {
+    this.pQueue = new Queue(this.pQueueOpts.queueName || 'hightouchEventsQueue', {
       redis: this.pQueueOpts.redisOpts,
-      prefix: this.pQueueOpts.prefix ? `{${this.pQueueOpts.prefix}}` : '{rudder}',
+      prefix: this.pQueueOpts.prefix ? `{${this.pQueueOpts.prefix}}` : '{hightouch}',
     });
 
     this.logger.debug(`isMultiProcessor: ${this.pQueueOpts.isMultiProcessor}`);

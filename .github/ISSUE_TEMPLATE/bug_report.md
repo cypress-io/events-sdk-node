@@ -29,7 +29,7 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Version of the _Node_ SDK**
-Please mention the version of the Rudder Node SDK you are using (e.g., Node SDK v1.0.0).
+Please mention the version of the Hightouch Node SDK you are using (e.g., Node SDK v1.0.0).
 
 **SDK initialisation snippet**
 Share the code snippet used for initializing the Node SDK.
