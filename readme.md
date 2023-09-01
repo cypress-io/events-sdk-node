@@ -28,7 +28,7 @@ Below parameters are optional and can be passed during SDK initialization:
 
 | Name                   | Type     | Default value                            | Description                                                                                       |
 | :--------------------- | :------- | :--------------------------------------- | :------------------------------------------------------------------------------------------------ |
-| `dataPlaneUrl`         | String   | `https://events.us-east-1.hightouch.com` | The data plane URL.                                                                               |
+| `dataPlaneUrl`         | String   |                                          | The data plane URL.                                                                               |
 | `path`                 | String   | `/v1/batch`                              | Path to batch endpoint.                                                                           |
 | `flushAt`              | Number   | 20                                       | The number of events to be flushed when reached this limit.                                       |
 | `flushInterval`        | Number   | 10000                                    | The maximum timespan (in milliseconds) after which the events from the in-memory queue is flushed |

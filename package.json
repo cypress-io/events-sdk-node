@@ -1,6 +1,6 @@
 {
   "name": "@ht-sdks/events-sdk-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HT Events Node SDK",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -46,7 +46,7 @@
     "package": "npm run build:cjs && npm run build:esm && npm run copy:assets"
   },
   "keywords": [
-    "analytics"
+
   ],
   "dependencies": {
     "@segment/loosely-validate-event": "2.0.0",

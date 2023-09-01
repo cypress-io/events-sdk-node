@@ -1,5 +1,8 @@
 # Changelog
 
+### [1.0.1](https://github.com/ht-sdks/events-sdk-node/compare/v1.0.0...v1.0.1) (2023-08-31)
+* testing release flow
+
 ### [1.0.0](https://github.com/ht-sdks/events-sdk-node/compare/v0.0.0...v1.0.0) (2023-08-31)
 * updated default data plane and control plane URLs
 * updated documentation
