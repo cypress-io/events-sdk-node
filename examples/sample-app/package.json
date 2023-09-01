@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hightouchio/events-sdk-node": "*"
+    "@ht-sdks/events-sdk-node": "*"
   }
 }

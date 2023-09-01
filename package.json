@@ -1,5 +1,5 @@
 {
-  "name": "@hightouchio/events-sdk-node",
+  "name": "@ht-sdks/events-sdk-node",
   "version": "1.0.0",
   "description": "HT Events Node SDK",
   "main": "./cjs/index.js",
