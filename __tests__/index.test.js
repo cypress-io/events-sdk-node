@@ -108,7 +108,7 @@ test('default options', (t) => {
   const client = new Analytics('key');
 
   t.is(client.writeKey, 'key');
-  t.is(client.host, 'https://events.us-east-1.hightouch.com');
+  t.is(client.host, 'https://us-east-1.hightouch-events.com');
   t.is(client.flushAt, 20);
   t.is(client.flushInterval, 10000);
 });

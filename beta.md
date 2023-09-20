@@ -11,7 +11,7 @@ A sample SDK initialization is shown below:
 const client = new Analytics(
   "write_key",
   {
-    dataPlaneUrl: DATA_PLANE_URL // default: https://events.us-east-1.hightouch.com with default path set to /v1/batch
+    dataPlaneUrl: DATA_PLANE_URL // default: https://us-east-1.hightouch-events.com with default path set to /v1/batch
     flushAt: <number> = 20,
     flushInterval: <ms> = 20000
     maxInternalQueueSize: <number> = 20000 // the max number of elements that the SDK can hold in memory,

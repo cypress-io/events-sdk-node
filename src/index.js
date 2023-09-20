@@ -35,8 +35,8 @@ class Analytics {
    *   @property {Number} [maxQueueSize] (default: 500 kb)
    *   @property {Number} [maxInternalQueueSize] (default: 20000)
    *   @property {String} [logLevel] (default: 'info')
-   *   @property {String} [dataPlaneUrl] (default: 'https://events.us-east-1.hightouch.com')
-   *   @property {String} [host] (default: 'https://events.us-east-1.hightouch.com')
+   *   @property {String} [dataPlaneUrl] (default: 'https://us-east-1.hightouch-events.com')
+   *   @property {String} [host] (default: 'https://us-east-1.hightouch-events.com')
    *   @property {String} [path] (default: '/v1/batch')
    *   @property {Boolean} [enable] (default: true)
    *   @property {Object} [axiosConfig] (optional)
@@ -75,7 +75,7 @@ class Analytics {
     this.pQueueOpts = undefined;
     this.pJobOpts = {};
     this.writeKey = writeKey;
-    this.host = removeSlash(dataPlaneUrl || host || 'https://events.us-east-1.hightouch.com');
+    this.host = removeSlash(dataPlaneUrl || host || 'https://us-east-1.hightouch-events.com');
     this.path = removeSlash(path || '/v1/batch');
     if (axiosInstance == null) {
       axiosInstance = axios.create(axiosConfig);
