@@ -511,7 +511,7 @@ class Analytics {
     lMessage.context = {
       ...lMessage.context,
       library: {
-        name: 'analytics-node',
+        name: 'events-sdk-node',
         version,
       },
     };
@@ -652,9 +652,11 @@ class Analytics {
     // the User-Agent header (see https://fetch.spec.whatwg.org/#terminology-headers
     // and https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader),
     // but browsers such as Chrome and Safari have not caught up.
-    const headers = {};
+    const headers = {
+      'Content-Type': 'application/json',
+    };
     if (typeof window === 'undefined') {
-      headers['user-agent'] = `analytics-node/${version}`;
+      headers['user-agent'] = `events-sdk-node/${version}`;
     }
 
     // If gzip feature is enabled compress the request payload
