@@ -1,5 +1,10 @@
 # Changelog
 
+### [1.0.3](https://github.com/ht-sdks/events-sdk-node/compare/v1.0.2...v1.0.3) (2023-09-29)
+* fixed content-type to send application/json instead of encoded forms
+* fixed "This syntax requires an imported helper but module 'tslib' cannot be found."
+* changed tsconfig target to es2019
+
 ### [1.0.2](https://github.com/ht-sdks/events-sdk-node/compare/v1.0.1...v1.0.2) (2023-09-19)
 * update default API endpoints
 
