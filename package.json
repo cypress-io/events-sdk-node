@@ -48,7 +48,7 @@
   "keywords": [],
   "dependencies": {
     "@segment/loosely-validate-event": "2.0.0",
-    "axios": "0.26.0",
+    "axios": "^1.0.0",
     "axios-retry": "3.5.1",
     "lodash.clonedeep": "4.5.0",
     "lodash.isstring": "4.0.1",
