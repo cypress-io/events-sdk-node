@@ -21,10 +21,11 @@ declare class Analytics {
      *   @property {Number} [retryCount] (default: 3)
      *   @property {Function} [errorHandler] (optional)
      *   @property {Boolean} [gzip] (default: true)
+     *   @property {Boolean} [disable] (default: false)
      */
     constructor(writeKey: string, options?: Object | undefined);
     queue: any[];
-    pQueue: any;
+    pQueue: import("bull").Queue<any> | undefined;
     pQueueInitialized: boolean;
     pQueueOpts: {
         queueName?: string | undefined;
@@ -40,8 +41,8 @@ declare class Analytics {
     } | undefined;
     pJobOpts: {};
     writeKey: string;
-    host: any;
-    path: any;
+    host: string;
+    path: string;
     axiosInstance: any;
     timeout: any;
     flushAt: number;
@@ -52,6 +53,7 @@ declare class Analytics {
     errorHandler: any;
     pendingFlush: any;
     logLevel: any;
+    disable: any;
     gzip: boolean;
     logger: Logger;
     addPersistentQueueProcessor(): void;
@@ -230,8 +232,8 @@ declare class Analytics {
      * @param {Function} [callback] (optional)
      * @api private
      */
-    enqueue(type: string, message: Object, callback?: Function | undefined): any;
-    flushTimer: any;
+    enqueue(type: string, message: Object, callback?: Function | undefined): void;
+    flushTimer: NodeJS.Timeout | null | undefined;
     /**
      * Flush the current queue
      *
@@ -240,7 +242,7 @@ declare class Analytics {
      */
     flush(callback?: Function | undefined): Analytics;
     state: string | undefined;
-    timer: any;
+    timer: NodeJS.Timeout | null | undefined;
     _isErrorRetryable(error: any): boolean;
 }
 import Logger_1 = require("./Logger");

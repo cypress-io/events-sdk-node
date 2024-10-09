@@ -4,7 +4,7 @@
 export class Logger {
     constructor(minLogLevel?: number);
     minLogLevel: number;
-    logProvider: any;
+    logProvider: Console;
     log(...data: any[]): void;
     info(...data: any[]): void;
     debug(...data: any[]): void;
@@ -17,11 +17,11 @@ export class Logger {
     formatLogData(level: any, data: any): any;
 }
 export namespace LOG_LEVEL_MAP {
-    let log: number;
-    let info: number;
-    let debug: number;
-    let warn: number;
-    let error: number;
-    let none: number;
+    const log: number;
+    const info: number;
+    const debug: number;
+    const warn: number;
+    const error: number;
+    const none: number;
 }
 //# sourceMappingURL=Logger.d.ts.map

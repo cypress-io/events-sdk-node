@@ -2,9 +2,9 @@
   "name": "@ht-sdks/events-sdk-node",
   "version": "1.0.3",
   "description": "HT Events Node SDK",
-  "main": "./cjs/index.js",
-  "module": "./esm/index.js",
-  "types": "./index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "license": "",
   "repository": "ht-sdks/events-sdk-node",
   "author": {

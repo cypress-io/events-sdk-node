@@ -43,10 +43,11 @@ class Analytics {
      *   @property {Number} [retryCount] (default: 3)
      *   @property {Function} [errorHandler] (optional)
      *   @property {Boolean} [gzip] (default: true)
+     *   @property {Boolean} [disable] (default: false)
      */
     constructor(writeKey, options) {
         const loadOptions = options || {};
-        const { dataPlaneUrl, host, path, axiosConfig, axiosRetryConfig, timeout, flushAt, flushInterval, maxQueueSize, maxInternalQueueSize, errorHandler, logLevel, enable, retryCount, } = loadOptions;
+        const { dataPlaneUrl, host, path, axiosConfig, axiosRetryConfig, timeout, flushAt, flushInterval, maxQueueSize, maxInternalQueueSize, errorHandler, logLevel, enable, retryCount, disable, } = loadOptions;
         let { axiosInstance } = loadOptions;
         assert(writeKey, "You must pass your Hightouch project's write key.");
         this.queue = [];
@@ -70,6 +71,7 @@ class Analytics {
         this.errorHandler = errorHandler;
         this.pendingFlush = null;
         this.logLevel = logLevel || 'info';
+        this.disable = disable || false;
         this.gzip = true;
         if (loadOptions.gzip === false) {
             this.gzip = false;
@@ -126,6 +128,11 @@ class Analytics {
                 // process the job after exponential delay, if it's the 0th attempt, setTimeout will fire immediately
                 // max delay is 30 sec, it is mostly in sync with a bull queue job max lock time
                 setTimeout(function (axiosInstance, host, path, gzipOption) {
+                    if (this.disable) {
+                        rdone(jobData.callbacks);
+                        done();
+                        return;
+                    }
                     const req = jobData.request;
                     req.data.sentAt = new Date();
                     if (gzipOption) {
@@ -609,6 +616,10 @@ class Analytics {
             });
         }
         else if (!this.pQueue) {
+            if (this.disable) {
+                done();
+                return Promise.resolve(data);
+            }
             this.pendingFlush = this.axiosInstance
                 .post(`${this.host}${this.path}`, data, req)
                 .then(() => {
